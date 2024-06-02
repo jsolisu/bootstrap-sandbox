@@ -1,20 +1,25 @@
 {
   "name": "bootstrap-sandbox",
   "version": "1.0.0",
-  "main": "index.js",
   "scripts": {
-    "sass": "sass --watch src/scss:src/css",
-    "start": "live-server src"
+    "start": "rm -rf .parcel-cache && parcel serve src/index.html --public-url / --dist-dir dist",
+    "build": "rm -rf .parcel-cache && parcel build src/index.html --public-url / --dist-dir dist",
+    "open:chrome": "npx opn-cli http://localhost:1234 --browser=chrome",
+    "serve": "npm-run-all --parallel start open:chrome"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.3"
   },
   "devDependencies": {
-    "live-server": "^1.2.2",
-    "sass": "^1.77.4"
+    "@fullhuman/postcss-purgecss": "^6.0.0",
+    "@parcel/transformer-sass": "^2.12.0",
+    "npm-run-all": "^4.1.5",
+    "opn-cli": "^5.0.0",
+    "parcel": "^2.12.0"
   }
 }
