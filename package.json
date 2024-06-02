@@ -2,8 +2,8 @@
   "name": "bootstrap-sandbox",
   "version": "1.0.0",
   "scripts": {
-    "start": "rm -rf .parcel-cache && parcel serve src/index.html --public-url / --dist-dir dist",
-    "build": "rm -rf .parcel-cache && parcel build src/index.html --public-url / --dist-dir dist",
+    "start": "rm -rf dist && rm -rf .parcel-cache && parcel serve src/index.html --public-url / --dist-dir dist",
+    "build": "rm -rf dist && rm -rf .parcel-cache && parcel build src/index.html --public-url / --dist-dir dist",
     "open:chrome": "npx opn-cli http://localhost:1234 --browser=chrome",
     "serve": "npm-run-all --parallel start open:chrome"
   },
